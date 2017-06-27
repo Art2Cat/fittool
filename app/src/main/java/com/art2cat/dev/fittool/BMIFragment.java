@@ -6,6 +6,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,8 +17,8 @@ import android.widget.TextView;
 
 public class BMIFragment extends Fragment {
 
+    private static final String TAG = "BMIFragment";
     private Activity mActivity;
-    private TextView textView;
 
 
     public BMIFragment() {
@@ -42,21 +43,24 @@ public class BMIFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_bmi, container, false);
-        EditText height = (EditText) view.findViewById(R.id.height);
-        EditText weight = (EditText) view.findViewById(R.id.weight);
+        EditText height = view.findViewById(R.id.height);
+        EditText weight = view.findViewById(R.id.weight);
 
-        MainActivity mainActivity = (MainActivity)mActivity;
+        MainActivity mainActivity = (MainActivity) mActivity;
 
 
-        Button button = (Button) view.findViewById(R.id.calculate);
+
+        Button button = view.findViewById(R.id.calculate);
 
         button.setOnClickListener(view1 -> {
             String hs = height.getText().toString();
             String ws = weight.getText().toString();
-            if (!hs.isEmpty() && !ws.isEmpty() && Double.valueOf(hs) != 0){
-                mainActivity.mTextMessage.setText(
-                        FitUtils.newInstance().calculateBMI(hs,ws)
-                );
+            if (!hs.isEmpty() && !ws.isEmpty() && Double.valueOf(hs) != 0) {
+                String result = FitUtils.newInstance().calculateBMI(hs, ws);
+                Log.d(TAG, "onClick: " + result);
+                if (mainActivity.mTextMessage != null) {
+                    mainActivity.mTextMessage.setText(result);
+                }
             } else {
                 Snackbar.make(view1, "height can't be zero", Snackbar.LENGTH_SHORT).show();
             }

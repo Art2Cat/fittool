@@ -2,71 +2,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     android:orientation="vertical"
     android:padding="8dp"
     tools:context="com.art2cat.dev.fittool.CalFragment">
 
-    <LinearLayout
+
+    <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:paddingBottom="8dp">
+        android:hint="@string/kj">
 
-        <EditText
-            android:id="@+id/kcal"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/kcal" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="(Kcal):" />
-
-        <TextView
-            android:layout_width="100dp"
-
-            android:layout_height="wrap_content"
-            android:layout_gravity="" />
-
-        <TextView
-            android:id="@+id/kj_converted"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="(KJ)" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:paddingTop="8dp">
-
-        <EditText
+        <android.support.design.widget.TextInputEditText
             android:id="@+id/kj"
-            android:layout_width="100dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/kj" />
 
-        <TextView
-            android:layout_width="wrap_content"
+            android:inputType="numberDecimal"
+            android:text="0"
+            android:textSize="20sp" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/kcal">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/kcal"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="(KJ):" />
 
-        <TextView
-            android:layout_width="100dp"
-
-            android:layout_height="wrap_content"
-            android:layout_gravity=""
-
-            />
-
-        <TextView
-            android:id="@+id/kcal_converted"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="(Kcal)" />
-    </LinearLayout>
-
+            android:inputType="numberDecimal"
+            android:text="0"
+            android:textSize="20sp" />
+    </android.support.design.widget.TextInputLayout>
 
 </LinearLayout>
