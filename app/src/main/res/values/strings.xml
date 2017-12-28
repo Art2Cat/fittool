@@ -1,16 +1,17 @@
 <resources>
     <string name="app_name">fittool</string>
-    <string name="title_home">BMI Calculator</string>
-    <string name="title_dashboard">Calorie unit conversion</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_bmi">BMI Calculator</string>
+    <string name="title_calorie">Calorie unit conversion</string>
+    <string name="title_about">About App</string>
     <string name="calculate">Calculate</string>
 
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="height">Height(M)</string>
     <string name="weight">Weight(KG)</string>
-    <string name="kcal">kcal</string>
-    <string name="kj">kj</string>
-    <string name="calorie_introduce">1 kJ = 0.239 Kcal \n 1 Kca）= 4.184 kJ</string>
+    <string name="kcal">Kcal:</string>
+    <string name="kj">KJ:</string>
+    <string name="equals">equals:</string>
+    <string name="calorie_introduce">1 kJ = 0.239 Kcal\n1 Kcal= 4.184 kJ</string>
 
 </resources>
