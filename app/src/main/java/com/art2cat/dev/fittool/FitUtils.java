@@ -10,17 +10,7 @@ import java.text.DecimalFormat;
 
 public class FitUtils {
 
-    private static FitUtils fitUtil = new FitUtils();
-
-    public static FitUtils newInstance() {
-        if (fitUtil == null) {
-            fitUtil = new FitUtils();
-        }
-        return fitUtil;
-    }
-
-
-    public String calculateBMI(String height, String weight) {
+    public static String calculateBMI(String height, String weight) {
         Double heightD = Double.valueOf(height);
         Double weightD = Double.valueOf(weight);
         Double bmi = weightD / (heightD * heightD);
