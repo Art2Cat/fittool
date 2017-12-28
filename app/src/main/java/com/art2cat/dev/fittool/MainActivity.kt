@@ -7,9 +7,9 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.TextView
 
-class MainActivity : AppCompatActivity() {
+open class MainActivity : AppCompatActivity() {
 
-    var mTextMessage: TextView? = null
+    open var mTextMessage: TextView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

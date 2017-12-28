@@ -9,20 +9,7 @@ import java.text.DecimalFormat;
  */
 
 public class FitUtils {
-    private DecimalFormat decimalFormat = new DecimalFormat("##.##");
-    private static FitUtils fitUtil;
-
-    /**
-     * get FitUtils singleton
-     *
-     * @return singleton
-     */
-    public static FitUtils newInstance() {
-        if (fitUtil == null) {
-            fitUtil = new FitUtils();
-        }
-        return fitUtil;
-    }
+    private static DecimalFormat decimalFormat = new DecimalFormat("##.##");
 
 
     /**
@@ -32,7 +19,7 @@ public class FitUtils {
      * @param weight unit kilogram
      * @return BMI result
      */
-    public String calculateBMI(String height, String weight) {
+    public static String calculateBMI(String height, String weight) {
         Double heightD = Double.valueOf(height);
         Double weightD = Double.valueOf(weight);
         Double bmi = weightD / (heightD * heightD);
@@ -58,7 +45,7 @@ public class FitUtils {
      * @param kjs kj
      * @return kcal result
      */
-    public String kjToKcal(String kjs) {
+    public static String kjToKcal(String kjs) {
         Double kj = Double.valueOf(kjs);
         Double kcal = kj * 0.239;
         return decimalFormat.format(kcal);
@@ -70,7 +57,7 @@ public class FitUtils {
      * @param kcals kcal
      * @return kj result
      */
-    public String kcalToKj(String kcals) {
+    public static String kcalToKj(String kcals) {
         Double kcal = Double.valueOf(kcals);
         Double kj = kcal * 4.184;
         return decimalFormat.format(kj);
